@@ -2,21 +2,30 @@ import React from 'react';
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import Button from './button'
+import Button from './button';
+
+import { IoLogoTiktok,IoLogoInstagram, IoMailOutline } from "react-icons/io5";
+import { MdOutlineEmail } from "react-icons/md";
+
 
 const Landing = () => {
   return (
    <Container>
       <Wrapper>
+        <span style={{flex: '2'}}></span>
+
         <h1>KennyCuts</h1>
         <h3>Kenny Espinosa<br/>est 2018</h3>
         <Button text={'Book Now'} callback={null}/>
 
+        <span style={{flex: '2'}}></span>
+
         <span>
-          <div>Email</div>
-          <div>Insta</div>
-          <div>Tiktok</div>
+          <div><IoMailOutline size={'100%'}/></div>
+          <div><IoLogoInstagram size={'100%'}/></div>
+          <div><IoLogoTiktok size={'100%'}/></div>
         </span>
+       
       </Wrapper>
 
       <Imgcarousel>
@@ -54,6 +63,8 @@ const Container = styled.main`
   height: 100vh;
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
+
+
 `
 
 const Wrapper = styled.div`
@@ -65,30 +76,71 @@ const Wrapper = styled.div`
   background-color: rgba(0,0,0,.5);
   z-index: 4;
 
-  display: grid;
-  place-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   gap: 20px;
   text-align: center;
   color: white;
+  padding: 60px 0;
 
-  h1{
+  @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+     gap: 15px;
+  }
+
+  h1{  
     font-size: 5rem;
+    line-height: 3rem;
+    padding-top: 1rem;
     font-weight: 100;
     font-family: Palatino;
+
     text-transform: uppercase;
     letter-spacing: 1rem;
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+      font-size: 3rem;
+      line-height: 1.5rem;
+      padding-top: .75rem;
+      
+    }
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
+      font-size: 2.5rem;
+      line-height: 1.5rem;
+      padding-top: .5rem;
+      letter-spacing: .75rem;
+      
+      
+    }
   }
 
   h3{
     font-family: "Bodoni72", cursive;
     font-size: 1.5rem;
     font-weight: 100;
+
+     @media screen and (min-width: ${({theme}) => theme.breakpoint.lg}){
+      font-size: 2rem;
+    }
   }
 
   span{
     display: flex;
     justify-content: center;
     gap: 15px;
+
+    div{
+      width: 45px;
+      height: 45px;
+      cursor: pointer;
+
+      @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+        width: 40px;
+        height: 40px;
+      }
+    }
   }
 
 `
