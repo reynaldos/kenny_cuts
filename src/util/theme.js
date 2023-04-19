@@ -1,5 +1,5 @@
 export const GlobalTheme = {
-
+    dropShadow: ' drop-shadow(0px 2px 4px #000)',
     breakpoint: {
         xs: '430px',
         sm: '576px',

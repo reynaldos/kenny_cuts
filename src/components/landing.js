@@ -36,6 +36,7 @@ const Landing = () => {
         showArrows={false}
         showThumbs={false}
         showStatus={false}
+        showIndicators={false}
         transitionTime={500}
         interval={4000}
       >
@@ -60,10 +61,10 @@ export default Landing
 
 const Container = styled.main`
   width: 100%;
-  height: 100vh;
+  height: calc(100vh - 60px);
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
-
+  
 
 `
 
@@ -83,13 +84,21 @@ const Wrapper = styled.div`
   gap: 20px;
   text-align: center;
   color: white;
-  padding: 60px 0;
+  padding: 25px 0;
 
   @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
      gap: 15px;
   }
 
+  * {
+    filter: ${({theme}) => theme.dropShadow};
+    -webkit-filter: ${({theme}) => theme.dropShadow};
+
+
+  }
+
   h1{  
+  
     font-size: 5rem;
     line-height: 3rem;
     padding-top: 1rem;
