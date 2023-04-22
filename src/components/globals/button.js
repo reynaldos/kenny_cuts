@@ -30,7 +30,7 @@ const BtnWrap = styled.button`
   ` };
 
   
-  margin: 0 auto;
+  /* margin: 0 auto; */
 
   cursor: pointer;
 
