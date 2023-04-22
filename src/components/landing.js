@@ -60,7 +60,7 @@ export default Landing
 
 const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 75px);
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
 
@@ -106,12 +106,14 @@ const Wrapper = styled.div`
     text-align: center;
     text-transform: uppercase;
     letter-spacing: 1rem;
+     padding-left: 1rem;
 
     @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
       font-size: 3rem;
       line-height: 1.5rem;
       padding-top: .75rem;
       letter-spacing: .75rem;
+      padding-left: .75rem;
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
@@ -119,6 +121,7 @@ const Wrapper = styled.div`
       line-height: 1.75rem;
       padding-top: .5rem;
       letter-spacing: .5rem;
+      padding-left: .5rem;
       
     }
   }

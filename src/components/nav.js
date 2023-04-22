@@ -89,7 +89,7 @@ export default Nav
 
 const Container = styled.nav`
   width: 100%;
-  height: 60px;
+  height: 75px;
   background-color: rgba(0,0,0,.75);
   backdrop-filter: blur(4px);
   position: relative;

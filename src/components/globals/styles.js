@@ -12,12 +12,14 @@ export const Header = styled.h2`
     font-weight: 100;
     text-transform: uppercase;
     letter-spacing: .5rem;
+    padding-left: 0.5rem;
     text-align: center;
 
     color: white;
     width: fit-content;
     
-    margin: 60px auto;
+    margin: 50px auto;
+    margin-top: 120px;
 
 `
 
@@ -30,6 +32,4 @@ export const Text = styled.p`
     text-align: center;
     
     color: white;
-
-
 `

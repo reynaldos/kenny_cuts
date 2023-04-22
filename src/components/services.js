@@ -44,13 +44,14 @@ const Services = () => {
 export default Services
 
 
-const Container = styled.main`
+const Container = styled.section`
   width: 100%;
-  /* outline: 1px red solid; */
+  max-width: ${({theme}) => theme.maxWidth};
+  margin: 0 auto;
 
 `
 
-const Wrapper = styled.section`
+const Wrapper = styled.div`
   width: 100%;
   display: flex;
   justify-content: center;
@@ -71,7 +72,7 @@ const Wrapper = styled.section`
  
       align-items: center;
       border: 2px solid white;
-      border-radius: 2px;
+      border-radius: ${({theme}) => theme.borderRadius};
 
 
 
