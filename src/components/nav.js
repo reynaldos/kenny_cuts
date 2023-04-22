@@ -1,5 +1,9 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
+import { RxHamburgerMenu } from "react-icons/rx";
+
+import Button from './globals/button';
+
 
 import logo from '../assets/kennyLogo.png'
 
@@ -26,30 +30,33 @@ const link = [
 
 const Nav = () => {
 
-  // const [scrolled,setScrolled]= useState(false);
+  const [scrolled,setScrolled]= useState(false);
 
-  // const handleScroll=() => {
-  //     const offset=window.scrollY;
-  //     if(offset > 200 ){
-  //       setScrolled(true);
-  //       console.log('scrolled')
-  //     }
-  //     else{
-  //        console.log('not scrolled')
-  //       setScrolled(false);
-  //     }
-  //   }
+  const handleScroll=() => {
+      const offset=window.scrollY;
+      const hieght = window.innerHeight
+      // console.table(offset, hieght)
 
-  // useEffect(() => {
-  //   window.addEventListener('scroll',handleScroll);
-  //   return ()=>{
-  //      window.removeEventListener('scroll',handleScroll);
-  //   }
-  // })
+      if(offset  > (hieght - 60)){
+        setScrolled(true);
+        // console.log('scrolled')
+      }
+      else{
+        // console.log('not scrolled')
+        setScrolled(false);
+      }
+    }
+
+  useEffect(() => {
+    window.addEventListener('scroll',handleScroll);
+    return ()=>{
+       window.removeEventListener('scroll',handleScroll);
+    }
+  })
 
   return (
       <Container 
-      // scrolled={scrolled}
+      scrolled={scrolled}
       >
         <Wrapper>
 
@@ -57,9 +64,19 @@ const Nav = () => {
             <img src={logo} alt=''/>
           </LogoWrap>
 
-          <div>
-            {link.map((value, index) => <NavBtn key={index} className='navText'>{value.label}</NavBtn>)}
-          </div>
+          {/* nav btns */}
+          <BtnWrap type={'desktop'}>
+            {link.map((value, index) => <NavBtn key={index}>{value.label}</NavBtn>)}
+            {scrolled && <Button text={'Book'} cursive={true}/>}
+          </BtnWrap>
+
+          {/* hamburger */}
+          <BtnWrap type={'mobile'}>
+            <div>
+              <RxHamburgerMenu color='white' size={'100%'}/>
+            </div>
+          </BtnWrap>
+
 
             
         </Wrapper>
@@ -75,17 +92,25 @@ const Container = styled.nav`
   height: 60px;
   background-color: rgba(0,0,0,.75);
   backdrop-filter: blur(4px);
-  position: fixed;
-  top: 0;
+  position: relative;
+  /* bottom: 60px; */
   z-index: 5;
 
-  /* ${({scrolled})=> scrolled ?
+  ${({scrolled})=> scrolled === true ?
   `
-    position: fixed;
+    position: sticky;
     top: 0;
-    left: 0;  
+    left: 0;
   `
-  :''} */
+  :''}
+
+
+
+ @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
+   position: fixed;
+    top: 0;
+    left: 0;
+ }
 
 `
 
@@ -97,11 +122,6 @@ const Wrapper = styled.div`
   justify-content: space-between;
   align-items: center;
 
-  div{
-    display: flex;
-    gap: 20px;
-  }
-
 `
 
 
@@ -111,14 +131,21 @@ const NavBtn = styled.button`
   border: none;
   cursor: pointer;
 
-  &:hover{
+  padding: .25rem .5rem; 
 
+  font-family: "Bodoni72", cursive;
+  color: white;
+  font-size: 1.75rem;
+
+  &:hover{
+    background-color: rgba(255,255,255,.1);
+    outline: 1px white solid;
   }
 
 `
 
 const LogoWrap = styled.button`
-  height: 75%;
+  height: 80%;
   padding: 0;
   border: 1px white solid;
   cursor: pointer;
@@ -126,4 +153,46 @@ const LogoWrap = styled.button`
   img{
     height: 100%;
   }
+`
+
+
+const BtnWrap = styled.div`
+  display: none;
+  gap: 20px;
+  height: 100%;
+
+  ${({type, theme})=>type === 'desktop' ? `
+
+    @media screen and (min-width: ${theme.breakpoint.md}){
+       display: flex;
+       height: min-content;
+      justify-content: space-between;
+      }
+
+
+   
+  
+  `:`
+   @media screen and (max-width: ${theme.breakpoint.md}){
+       display: flex;
+       align-items: center;
+      justify-content: flex-start;
+      }
+
+
+     @media screen and (max-width: ${theme.breakpoint.xs}){
+       aspect-ratio:1;
+      }
+
+  
+  `}
+
+
+div{
+  height: 80%;
+  padding: .5rem;
+   
+  cursor: pointer;
+}
+
 `

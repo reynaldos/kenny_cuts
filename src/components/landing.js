@@ -2,10 +2,9 @@ import React from 'react';
 import styled from 'styled-components';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; 
 import { Carousel } from 'react-responsive-carousel';
-import Button from './button';
+import Button from './globals/button';
 
 import { IoLogoTiktok,IoLogoInstagram, IoMailOutline } from "react-icons/io5";
-import { MdOutlineEmail } from "react-icons/md";
 
 
 const Landing = () => {
@@ -64,8 +63,10 @@ const Container = styled.main`
   height: calc(100vh - 60px);
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
-  
 
+   @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
+   height:100vh;
+ }
 `
 
 const Wrapper = styled.div`
@@ -84,27 +85,25 @@ const Wrapper = styled.div`
   gap: 20px;
   text-align: center;
   color: white;
-  padding: 25px 0;
+  padding: 25px 1rem;
+
 
   @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
      gap: 15px;
   }
 
-  * {
-    filter: ${({theme}) => theme.dropShadow};
-    -webkit-filter: ${({theme}) => theme.dropShadow};
-
-
-  }
+ 
 
   h1{  
+     filter: ${({theme}) => theme.dropShadow};
+    -webkit-filter: ${({theme}) => theme.dropShadow};
   
     font-size: 5rem;
     line-height: 3rem;
     padding-top: 1rem;
     font-weight: 100;
     font-family: Palatino;
-
+    text-align: center;
     text-transform: uppercase;
     letter-spacing: 1rem;
 
@@ -112,20 +111,22 @@ const Wrapper = styled.div`
       font-size: 3rem;
       line-height: 1.5rem;
       padding-top: .75rem;
-      
+      letter-spacing: .75rem;
     }
 
     @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
-      font-size: 2.5rem;
-      line-height: 1.5rem;
+      font-size: 2.25rem;
+      line-height: 1.75rem;
       padding-top: .5rem;
-      letter-spacing: .75rem;
-      
+      letter-spacing: .5rem;
       
     }
   }
 
   h3{
+     filter: ${({theme}) => theme.dropShadow};
+    -webkit-filter: ${({theme}) => theme.dropShadow};
+
     font-family: "Bodoni72", cursive;
     font-size: 1.5rem;
     font-weight: 100;
@@ -139,6 +140,9 @@ const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     gap: 15px;
+     filter: ${({theme}) => theme.dropShadow};
+    -webkit-filter: ${({theme}) => theme.dropShadow};
+    
 
     div{
       width: 45px;
