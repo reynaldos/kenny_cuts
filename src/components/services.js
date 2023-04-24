@@ -23,7 +23,7 @@ const serviceInfo = [
 
 const Services = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id='services'>
        <Header>Services</Header>
 
       <Wrapper>
@@ -58,9 +58,9 @@ const Wrapper = styled.div`
   div{  
       background-color: rgba(0,0,0,.25);
       backdrop-filter: blur(4px);
-      width: 300px;
-      min-height: 300px;
-      padding: 1rem;
+      width: 325px;
+      /* min-height: 325px; */
+      padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
       justify-content: space-evenly;
@@ -83,11 +83,15 @@ const Wrapper = styled.div`
      h3{
         font-size: 2.5rem;
         line-height: 2.5rem;
+        margin: 1.5rem auto;
+        
     }
 
       @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
        width: calc(100% - 2rem);
        height: 275px;
+      min-height: auto;
+
 
        h5{
         font-size: 1.5rem;
