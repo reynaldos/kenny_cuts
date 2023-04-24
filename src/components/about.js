@@ -1,34 +1,33 @@
 import React from 'react';
 import styled from 'styled-components';
 
-import { Header, Text } from './globals/styles';
+import { Header, Text,SectionContainer } from './globals/styles';
 
 const info = {
-  body:"Hi, I'm Kenny Espinosa, a professional barber based in Central Florida. I take pride in providing exceptional grooming services to my clients, and I offer house calls for their convenience. As an MLB barber, I've had the privilege of working with top athletes, honing my skills and techniques to meet their exacting standards. In addition, I co-own a barber shop called \"The Neighborhood Studio\", where I welcome clients to experience a premium grooming experience.",
+  body: ["Hi, I'm Kenny Espinosa, a professional barber based in Central Florida. I take pride in providing exceptional grooming services to my clients, and I offer house calls for their convenience.", "As an MLB barber, I've had the privilege of working with top athletes, honing my skills and techniques to meet their exacting standards. In addition, I co-own a barber shop called \"The Neighborhood Studio\", where I welcome clients to experience a premium grooming experience."],
   pic:'assets/pic1.png',
 }
 
 const About = () => {
   return (
-    <Container>
+    <SectionContainer>
       <Wrapper>
         <Header>About</Header>
-        <Text>{info.body}</Text>
+        <span>
+          { info.body.map((data, index)=>{
+                    return  <Text key={index}>{data}</Text>
+                  })}
+        </span>
+        
         <img src={info.pic} alt='Kenny Espinosa'/>
       </Wrapper>
-      </Container>
+      </SectionContainer>
   )
 }
 
 export default About
 
 
-const Container = styled.section`
-  width: 100%;
-  max-width: ${({theme}) => theme.maxWidth};
-  margin: 0 auto;
-
-`
 
 const Wrapper = styled.div`
   width: 80%;
@@ -48,6 +47,7 @@ const Wrapper = styled.div`
   }
 
   p{
+    margin-bottom: 1rem;
     padding: 0 5rem;
     @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
         padding: 0 2rem;

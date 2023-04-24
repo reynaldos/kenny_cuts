@@ -35,8 +35,8 @@ export const Header = styled.h2`
 
     @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
         margin-top: 5rem;
-        font-size: 1.5rem;
-        line-height: 1.5rem;
+        font-size: 1.75rem;
+        line-height: 1.75rem;
         padding-top: .25rem;
         letter-spacing: .25rem;
         padding-left: 0.25rem;
@@ -46,12 +46,21 @@ export const Header = styled.h2`
 export const Text = styled.p`
    font-family: Palatino, 'Times New Roman', Times, serif;
 
-    font-size: 1rem;
-    line-height: 1rem;
+    font-size: 1.2rem;
+    letter-spacing: 1px;
+    line-height: 1.3rem;
+    word-spacing: .1rem;
     font-weight: 100;
     text-align: center;
+   
     
     color: white;
+
+     @media screen and (max-width: ${({theme}) => theme.breakpoint.sm}){
+         font-size: 1rem;
+        line-height: 1.2rem;
+    }
+
 `
 
 export const SectionContainer = styled.section`

@@ -1,10 +1,13 @@
 import React from 'react';
-import styled from 'styled-components';
 
 import Nav from '../components/nav';
 import Landing from '../components/landing';
 import Services from '../components/services';
-import About from '../components/about'
+import About from '../components/about';
+import Contact from '../components/contact';
+import Footer from '../components/footer';
+
+
 
 
 const Home = () => {
@@ -14,7 +17,8 @@ const Home = () => {
       <Nav/>
       <Services/>
       <About/>
-     
+      <Contact />
+      <Footer/>
     </>
   )
 }

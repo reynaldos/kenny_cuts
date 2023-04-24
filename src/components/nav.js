@@ -67,7 +67,7 @@ const Nav = () => {
           {/* nav btns */}
           <BtnWrap type={'desktop'}>
             {link.map((value, index) => <NavBtn key={index}>{value.label}</NavBtn>)}
-            {scrolled && <Button text={'Book'} cursive={true}/>}
+            {scrolled && <Button text={'Book'} cursive={true} callback={'book'}/>}
           </BtnWrap>
 
           {/* hamburger */}

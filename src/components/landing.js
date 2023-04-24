@@ -15,7 +15,7 @@ const Landing = () => {
 
         <h1>KennyCuts</h1>
         <h3>Kenny Espinosa<br/>est 2018</h3>
-        <Button text={'Book Now'} callback={null}/>
+        <Button text={'Book Now'} callback={'book'}/>
 
         <span style={{flex: '2'}}></span>
 
