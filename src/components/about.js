@@ -10,7 +10,7 @@ const info = {
 
 const About = () => {
   return (
-    <SectionContainer>
+    <SectionContainer id='about'>
       <Wrapper>
         <Header>About</Header>
         <span>

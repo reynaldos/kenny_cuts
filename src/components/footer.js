@@ -79,12 +79,13 @@ const Footer = () => {
                    return <h5 key={jndex}>{data.text}</h5>
                 }else if(data.type === 'email'){
                   return <a 
+                   key={jndex}
                   href={`mailto:${data.text}?subject=Barbershop Questions`}
                   target='_blank' rel="noreferrer"
-                  ><h5 key={jndex}>{data.text}</h5></a>
+                  ><h5>{data.text}</h5></a>
                 } 
                 else{
-                   return <a href={data.link} target='_blank' rel="noreferrer"><h5 key={jndex}>{data.text}</h5></a>
+                   return <a key={jndex} href={data.link} target='_blank' rel="noreferrer"><h5 key={jndex}>{data.text}</h5></a>
                 }
                
                 

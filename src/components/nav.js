@@ -1,11 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
 import { RxHamburgerMenu } from "react-icons/rx";
+import { Link as LinkS } from 'react-scroll';
+import { animateScroll as scroll } from 'react-scroll'
+
 
 import Button from './globals/button';
-
-
-import logo from '../assets/kennyLogo.png'
+import logo from '../assets/kennyLogo.png';
 
 
 const link = [
@@ -30,6 +31,12 @@ const link = [
 
 const Nav = () => {
 
+  // const goto = (e, location) =>{
+  //   e.preventDefault();
+
+  //   scroll.scrollTo()
+  // }
+
   const [scrolled,setScrolled]= useState(false);
 
   const handleScroll=() => {
@@ -37,7 +44,7 @@ const Nav = () => {
       const hieght = window.innerHeight
       // console.table(offset, hieght)
 
-      if(offset  > (hieght - 60)){
+      if(offset  > (hieght - 75)){
         setScrolled(true);
         // console.log('scrolled')
       }
@@ -56,17 +63,44 @@ const Nav = () => {
 
   return (
       <Container 
-      scrolled={scrolled}
-      >
+      scrolled={scrolled}>
+
         <Wrapper>
 
-          <LogoWrap>
-            <img src={logo} alt=''/>
-          </LogoWrap>
+          <LinkS
+            style={{height:'80%'}}
+            to={'home'} 
+            smooth={true} 
+            duration={500} 
+            spy={true} 
+            exact={'true'} 
+            activeClass='active'
+            offset={-75} >
+               <LogoWrap>
+                  <img src={logo} alt=''/>
+                </LogoWrap>
+          </LinkS>
+         
 
           {/* nav btns */}
           <BtnWrap type={'desktop'}>
-            {link.map((value, index) => <NavBtn key={index}>{value.label}</NavBtn>)}
+            {link.map((value, index) => {
+              return(
+                 <LinkS
+                    key={index}
+                    to={value.id} 
+                    smooth={true} 
+                    duration={500} 
+                    spy={true} 
+                    exact={'true'} 
+                    activeClass='active'
+                    offset={-75}>
+                      <NavBtn>
+                          {value.label}
+                      </NavBtn> 
+                </LinkS>
+              )})}
+            
             {scrolled && <Button text={'Book'} cursive={true} callback={'book'}/>}
           </BtnWrap>
 
@@ -142,10 +176,10 @@ const NavBtn = styled.button`
     outline: 1px white solid;
   }
 
-`
+` 
 
 const LogoWrap = styled.button`
-  height: 80%;
+  height: 100%;
   padding: 0;
   border: 1px white solid;
   cursor: pointer;

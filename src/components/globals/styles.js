@@ -56,7 +56,7 @@ export const Text = styled.p`
     
     color: white;
 
-     @media screen and (max-width: ${({theme}) => theme.breakpoint.sm}){
+     @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
          font-size: 1rem;
         line-height: 1.2rem;
     }

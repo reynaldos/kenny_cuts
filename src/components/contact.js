@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <SectionContainer>
+    <SectionContainer id='contact'>
       
 
       <Wrapper>

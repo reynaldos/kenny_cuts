@@ -9,7 +9,7 @@ import { IoLogoTiktok,IoLogoInstagram, IoMailOutline } from "react-icons/io5";
 
 const Landing = () => {
   return (
-   <Container>
+   <Container id='home'>
       <Wrapper>
         <span style={{flex: '2'}}></span>
 
