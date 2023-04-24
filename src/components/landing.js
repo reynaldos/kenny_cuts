@@ -6,6 +6,21 @@ import Button from './globals/button';
 
 import { IoLogoTiktok,IoLogoInstagram, IoMailOutline } from "react-icons/io5";
 
+const info= [
+  {
+    link:'thisiskennycuts@gmail.com'
+  },
+   {
+        name:'Instagram',
+        icon: IoLogoInstagram,
+        link: 'https://instagram.com/kenny.cuts?igshid=YmMyMTA2M2Y='
+      },
+       {
+        name:'TikTok',
+        icon: IoLogoTiktok,
+        link: 'https://www.tiktok.com/@kenny.cuts?_t=8biO1SjA5ec&_r=1'
+      }
+]
 
 const Landing = () => {
   return (
@@ -20,9 +35,17 @@ const Landing = () => {
         <span style={{flex: '2'}}></span>
 
         <span>
-          <div><IoMailOutline size={'100%'}/></div>
-          <div><IoLogoInstagram size={'100%'}/></div>
-          <div><IoLogoTiktok size={'100%'}/></div>
+          <a 
+              href={`mailto:${info[0].link}?subject=Barbershop Questions`}
+            target='_blank' rel="noreferrer"><IoMailOutline size={'100%'}/></a>
+          <a
+            href={info[1].link}
+            target='_blank' rel="noreferrer"
+          ><IoLogoInstagram size={'100%'}/></a>
+          <a
+            href={info[2].link}
+            target='_blank' rel="noreferrer"
+          ><IoLogoTiktok size={'100%'}/></a>
         </span>
        
       </Wrapper>
@@ -147,7 +170,9 @@ const Wrapper = styled.div`
     -webkit-filter: ${({theme}) => theme.dropShadow};
     
 
-    div{
+    a{
+      border: none;
+      background-color: transparent;
       width: 45px;
       height: 45px;
       cursor: pointer;
