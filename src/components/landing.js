@@ -87,7 +87,7 @@ const Container = styled.main`
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
 
-   @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
+   @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
    height:100vh;
  }
 `

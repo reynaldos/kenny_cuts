@@ -50,7 +50,7 @@ const Contact = () => {
   };
 
   return (
-    <SectionContainer id='contact'>
+    <SectionContainer id='contact' style={{minHeight: 'auto'}}>
       
 
       <Wrapper>
@@ -110,8 +110,8 @@ export default Contact
 
 const Wrapper = styled.div`
   width: calc(100% - 2rem);
-  margin: 0 auto;
-
+  margin: 2rem auto;
+  margin-top: 10rem;
   display: flex;
   justify-content: space-evenly;
   gap: 20px;
