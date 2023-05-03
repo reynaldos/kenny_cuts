@@ -112,6 +112,8 @@ const Footer = () => {
           </Wrapper>
         )
       })}
+
+      <DevLink href='https://reysanchez.dev' target='_blank' rel="noreferrer">Designed and Built by Rey Sanchez</DevLink>
     </Container>
   )
 }
@@ -133,7 +135,7 @@ const Container = styled.footer`
 const Wrapper = styled.div`
   min-width: 350px;
   margin: 4rem;
-  z-index: 20;
+  z-index: 2;
 
 
   display: flex;
@@ -202,4 +204,14 @@ const Wrapper = styled.div`
 
     }
   }
+`
+
+const DevLink = styled.a`
+  text-decoration: none;
+  color:white;
+  margin: 1rem;
+  z-index: 3;
+  font-size: 16px;
+  /* font-family: 'Helvitica'; */
+
 `
