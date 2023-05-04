@@ -102,7 +102,8 @@ const Nav = () => {
             spy={true} 
             exact={'true'} 
             activeClass='active'
-            offset={-75} >
+            offset={-75} 
+            onClick={isOpen ? toggleNav : ()=>{}}>
                <LogoWrap>
                   <img src={logo} alt=''/>
                 </LogoWrap>
@@ -121,7 +122,7 @@ const Nav = () => {
                     spy={true} 
                     exact={'true'} 
                     activeClass='active'
-                    offset={-75}>
+                    offset={index===0? 0:-75} >
                       <NavBtn>
                           {value.label}
                       </NavBtn> 
@@ -156,7 +157,8 @@ const Nav = () => {
                     spy={true} 
                     exact={'true'} 
                     activeClass='active'
-                    offset={-75}>
+                    offset={-75}
+                     onClick={toggleNav}>
                       <NavBtn>
                           {value.label}
                       </NavBtn> 
