@@ -6,6 +6,7 @@ import Services from '../components/services';
 import About from '../components/about';
 import Contact from '../components/contact';
 import Footer from '../components/footer';
+import Portfolio from '../components/portfolio';
 
 
 
@@ -17,6 +18,7 @@ const Home = () => {
       <Nav/>
       <Services/>
       <About/>
+      <Portfolio/>
       <Contact />
       <Footer/>
     </>
