@@ -129,14 +129,19 @@ const Container = styled.footer`
   align-items: center;
 
   background-color: black;
+  gap: 4rem;
+  padding: 4rem 1rem;
+
+  @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+        gap: 3rem;
+        padding: 3rem 0rem;
+    }
 
 `
 
 const Wrapper = styled.div`
   min-width: 350px;
-  margin: 4rem;
   z-index: 2;
-
 
   display: flex;
   flex-direction: column;
@@ -207,6 +212,8 @@ const Wrapper = styled.div`
 `
 
 const DevLink = styled.a`
+  position: absolute;
+  bottom: 0;
   text-decoration: none;
   color:white;
   margin: 1rem;
