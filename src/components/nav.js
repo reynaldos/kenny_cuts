@@ -198,7 +198,7 @@ export default Nav
 const Container = styled.nav`
   width: 100%;
   height: 75px;
-  background-color: rgba(0,0,0,.75);
+  background-color: rgba(0,0,0, .9);
   backdrop-filter: blur(4px);
   position: relative;
   /* bottom: 60px; */
@@ -219,6 +219,8 @@ const Container = styled.nav`
     top: 0;
     left: 0;
  }
+
+
 
 `
 

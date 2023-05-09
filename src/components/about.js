@@ -5,7 +5,7 @@ import { Header, Text,SectionContainer } from './globals/styles';
 
 const info = {
   body: ["Hi, I'm Kenny Espinosa, a professional barber based in Central Florida. I take pride in providing exceptional grooming services to my clients, and I offer house calls for their convenience.", "As an MLB barber, I've had the privilege of working with top athletes, honing my skills and techniques to meet their exacting standards. In addition, I co-own a barber shop called \"The Neighborhood Studio\", where I welcome clients to experience a premium grooming experience."],
-  pic:'assets/pic1.png',
+  pic:'assets/about.png',
 }
 
 const About = () => {
@@ -41,9 +41,13 @@ const Wrapper = styled.div`
     object-fit: contain;
     width: clamp(340px, calc(100% - 2rem), 800px);
 
+
     border: 2px solid white;
     border-radius: ${({theme}) => theme.borderRadius};
     margin: 2rem auto;
+
+     -webkit-filter: grayscale(100%); 
+    filter: grayscale(100%);
   }
 
   p{

@@ -62,15 +62,14 @@ const Landing = () => {
         transitionTime={500}
         interval={4000}
       >
-          <div>
-              <img src="assets/pic1.png" alt='pic1'/>
-          </div> 
-          <div>
-              <img src="assets/pic1.png" alt='pic1'/>
-          </div> 
-          <div>
-              <img src="assets/pic1.png" alt='pic1'/>
-          </div>
+        {[1,1,1,1].map((item,index)=>{
+          return(
+            <div key={index}>
+                <img src={`assets/landing/${index+1}.png`} alt={`pic${index+1}`}/>
+            </div> 
+          )
+        })}
+
         </CustomCarousel>
       
       </Imgcarousel>
@@ -98,7 +97,7 @@ const Wrapper = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0,0,0,.5);
+  background-color: rgba(0,0,0,.75);
   z-index: 4;
 
   display: flex;
@@ -200,6 +199,7 @@ const CustomCarousel = styled(Carousel)`
     object-fit: cover;
     object-position: 60%;
     height: 100vh;
+    
   }
 
 `

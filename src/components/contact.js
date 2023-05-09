@@ -6,7 +6,7 @@ import { SectionContainer } from './globals/styles'
 
 // import { LoadingWheel } from '../loadingWheel';
 
-const formPic = 'assets/pic1.png'
+const formPic = 'assets/contact.png'
 
 const Contact = () => {
 
@@ -157,6 +157,7 @@ const Wrapper = styled.div`
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: top;
     }
 
      @media screen and (max-width: ${props => props.theme.breakpoint.md}){

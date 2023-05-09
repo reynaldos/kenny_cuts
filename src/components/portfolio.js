@@ -5,17 +5,59 @@ import { Header, Text,SectionContainer } from './globals/styles';
 
 const galleryPics = [
   {
-    pic:'assets/gallery1.png',
+    pic:'julio.png',
     title:'Julio Rodrgiuez',
-    description:'Centerfielder for Seatle Mariners',
+    description:'CF for Seattle Mariners 2022 Rookie of the Year',
     isHOF: true
   },
-   {
-    pic:'assets/gallery1.png',
-    title: null,
-    description: null,
-    isHOF: false
-  }
+  {
+    pic:'willi.png',
+    title:'Willi Castro ',
+    description:'OF for Minnesota Twins',
+    isHOF: true
+  },
+  {
+    pic:'nomar.png',
+    title:'Nomar Mazara',
+    description:'OF for Baltimore Orioles ',
+    isHOF: true
+  },
+  {
+    pic:'akil.png',
+    title:'Akil Baddoo',
+    description:'OF for Detroit Tigers',
+    isHOF: true
+  },
+  {
+    pic:'jeimer.png',
+    title:'Jeimer Candelario',
+    description:'3B for Washington Nationals ',
+    isHOF: true
+  },
+  {
+    pic:'riley.png',
+    title:'Riley Green',
+    description:'CF for Detroit Tigers ',
+    isHOF: true
+  },
+  {
+    pic:'amed.png',
+    title:'Amed Rosario',
+    description:'SS for Cleveland Guardians ',
+    isHOF: true
+  },
+  {
+    pic:'terrance.png',
+    title:'Terrance Ross',
+    description:'SG for Phoenix Suns',
+    isHOF: true
+  },
+  //  {
+  //   pic:'assets/gallery1.png',
+  //   title: null,
+  //   description: null,
+  //   isHOF: false
+  // }
 ]
 
 const Portfolio = () => {
@@ -46,7 +88,7 @@ const GridItem = ({info}) => {
         <h1>{title}</h1>
         <h3>{description}</h3>
       </div>}
-      <img src={pic} alt=''/>
+      <img src={`assets/gallery/${pic}`} alt=''/>
     </ItemContainer>
 
   )
@@ -138,7 +180,7 @@ const ItemContainer = styled.div`
 
 
    &:hover{
-
+      cursor: pointer;
       div{
         opacity: 1;
       transition: opacity 800ms ease 500ms;
