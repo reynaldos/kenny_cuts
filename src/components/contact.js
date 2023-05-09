@@ -3,6 +3,7 @@ import styled from 'styled-components';
 import emailjs from '@emailjs/browser';
 import Button from './globals/button';
 import { SectionContainer } from './globals/styles'
+import { LoadingWheel } from './globals/loading';
 
 // import { LoadingWheel } from '../loadingWheel';
 
@@ -96,9 +97,10 @@ const Contact = () => {
             {/* submit btn */}
             <Button text={'Send'} callback={null}></Button>
             {/* <SendBtn type='submit' value={'send'}><h2>Send</h2></SendBtn> */}
+             {emailState !== 'idle' && <LoadingWheel email={{emailState,setEmailState}}/>}
         </FormWrap>
-
-        {/* {emailState !== 'idle' && <LoadingWheel email={{emailState,setEmailState}}/>} */}
+       
+      
       </Wrapper>
     </SectionContainer>
   )
@@ -182,10 +184,10 @@ const Wrapper = styled.div`
 `
 
 const FormWrap = styled.form`
+  position: relative;
   width: 50%;
   display: flex;
   flex-direction: column;
-
   gap: 20px;
 
 

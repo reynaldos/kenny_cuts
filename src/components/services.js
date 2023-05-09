@@ -6,17 +6,17 @@ const serviceInfo = [
   {
     title: 'Hair Cut',
     price: '35',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    body: "Men's haircuts can vary widely in terms of length, style, and technique, with popular options including the buzz cut, crew cut, undercut, fade, pompadour, side part, and textured crop."
   },
   {
     title: 'Hair Cut & Beard',
     price: '40',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    body: "In addition to haircuts, I also offer beard grooming services, with your haircut experience which includes trimming, shaping, and styling of facial hair."
   },
   {
     title: 'Clean Up',
     price: '25',
-    body: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
+    body: 'A "clean up" is a grooming service for men that tidies up the hair around the neck, sideburns, and hairline using clippers or trimmers without fading or changing the hair length significantly.'
   },
 ]
 
@@ -32,7 +32,7 @@ const Services = () => {
           <div key={index}>
             <h5>{info.title}</h5>
             <h3>${info.price}</h3>
-            <Text>{info.body}</Text>
+            <Text style={{flex:'1.5'}}>{info.body}</Text>
           </div>)
         })}
 
@@ -55,11 +55,14 @@ const Wrapper = styled.div`
   gap: 20px;
 
 
+
   div{  
+   
+      /* flex-grow: 1;  */
       background-color: rgba(0,0,0,.25);
       backdrop-filter: blur(4px);
       width: 325px;
-      /* min-height: 325px; */
+      min-height: 400px;
       padding: 1.5rem 1rem;
       display: flex;
       flex-direction: column;
@@ -84,13 +87,18 @@ const Wrapper = styled.div`
         font-size: 2.5rem;
         line-height: 2.5rem;
         margin: 1.5rem auto;
+        flex: 2;
+        display: flex;
+        align-items: center;
+
         
     }
 
       @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
        width: calc(100% - 2rem);
-       height: 275px;
-      min-height: auto;
+        min-height: auto;
+       height: 300px;
+
 
 
        h5{
