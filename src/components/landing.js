@@ -197,7 +197,7 @@ const CustomCarousel = styled(Carousel)`
 
   img{
     object-fit: cover;
-    object-position: 60%;
+    object-position: center;
     height: 100vh;
     
   }
