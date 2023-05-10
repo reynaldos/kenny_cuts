@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import styled from 'styled-components';
-import { RxHamburgerMenu } from "react-icons/rx";
+import { RxHamburgerMenu,RxCross1 } from "react-icons/rx";
 import { Link as LinkS } from 'react-scroll';
 import { animateScroll as scroll } from 'react-scroll'
 import { IoLogoTiktok,IoLogoInstagram, IoMailOutline } from "react-icons/io5";
@@ -135,7 +135,7 @@ const Nav = () => {
           {/* hamburger */}
           <BtnWrap type={'mobile'} onClick={toggleNav}>
             <div>
-              <RxHamburgerMenu color='white' size={'100%'}/>
+              {!isOpen ? <RxHamburgerMenu color='white' size={'100%'}/> : <RxCross1 color='white' size={'100%'}/>}
             </div>
           </BtnWrap>
 
