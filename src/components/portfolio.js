@@ -5,49 +5,49 @@ import { Header, Text,SectionContainer } from './globals/styles';
 
 const galleryPics = [
   {
-    pic:'julio.png',
+    pic:'julio.webp',
     title:'Julio Rodrgiuez',
     description:'CF for Seattle Mariners 2022 Rookie of the Year',
     isHOF: true
   },
   {
-    pic:'willi.png',
+    pic:'willi.webp',
     title:'Willi Castro ',
     description:'OF for Minnesota Twins',
     isHOF: true
   },
   {
-    pic:'nomar.png',
+    pic:'nomar.webp',
     title:'Nomar Mazara',
     description:'OF for Baltimore Orioles ',
     isHOF: true
   },
   {
-    pic:'akil.png',
+    pic:'akil.webp',
     title:'Akil Baddoo',
     description:'OF for Detroit Tigers',
     isHOF: true
   },
   {
-    pic:'jeimer.png',
+    pic:'jeimer.webp',
     title:'Jeimer Candelario',
     description:'3B for Washington Nationals ',
     isHOF: true
   },
   {
-    pic:'riley.png',
+    pic:'riley.webp',
     title:'Riley Green',
     description:'CF for Detroit Tigers ',
     isHOF: true
   },
   {
-    pic:'amed.png',
+    pic:'amed.webp',
     title:'Amed Rosario',
     description:'SS for Cleveland Guardians ',
     isHOF: true
   },
   {
-    pic:'terrance.png',
+    pic:'terrance.webp',
     title:'Terrance Ross',
     description:'SG for Phoenix Suns',
     isHOF: true

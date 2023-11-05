@@ -65,7 +65,7 @@ const Landing = () => {
         {[1,1,1,1].map((item,index)=>{
           return(
             <div key={index}>
-                <img src={`assets/landing/${index+1}.png`} alt={`pic${index+1}`}/>
+                <img src={`assets/landing/${index+1}.webp`} alt={`pic${index+1}`}/>
             </div> 
           )
         })}

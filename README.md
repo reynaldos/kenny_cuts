@@ -10,7 +10,7 @@
   A barber portfolio built with <a href="https://reactjs.org" target="_blank">React</a> and hosted with <a href="https://vercel.com/" target="_blank">Vercel</a>. (<a href="https://www.thekennycuts.com" target="_blank">thekennycuts.com</a>)
 </p>
 
-![App Screenshot](https://www.thekennycuts.com/assets/share.png)
+![App Screenshot](https://www.thekennycuts.com/assets/share.webp)
 
 ## Installation
 
