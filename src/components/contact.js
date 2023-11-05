@@ -7,7 +7,7 @@ import { LoadingWheel } from './globals/loading';
 
 // import { LoadingWheel } from '../loadingWheel';
 
-const formPic = 'assets/contact.png'
+const formPic = 'assets/contact.webp'
 
 const Contact = () => {
 
