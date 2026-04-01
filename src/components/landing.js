@@ -26,16 +26,12 @@ const Landing = () => {
   return (
    <Container id='home'>
       <Wrapper>
-        <span style={{flex: '2'}}></span>
-
         <h1>KennyCuts</h1>
         <h3>Kenny Espinosa<br/>est 2018</h3>
         <Button text={'Book Now'} callback={'book'}/>
 
-        <span style={{flex: '2'}}></span>
-
-        <span>
-          <a 
+        <SocialLinks>
+          <a
               href={`mailto:${info[0].link}?subject=Barbershop Questions`}
             target='_blank' rel="noreferrer"><IoMailOutline size={'100%'}/></a>
           <a
@@ -46,8 +42,8 @@ const Landing = () => {
             href={info[2].link}
             target='_blank' rel="noreferrer"
           ><IoLogoTiktok size={'100%'}/></a>
-        </span>
-       
+        </SocialLinks>
+
       </Wrapper>
 
       <Imgcarousel>
@@ -82,12 +78,14 @@ export default Landing
 
 const Container = styled.main`
   width: 100%;
-  height: calc(100dvh - 75px);
+  height: calc(100vh - 75px);
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
 
    @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
-   height:100dvh;
+   height: 100dvh;
+   -webkit-mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
+   mask-image: linear-gradient(to bottom, black 95%, transparent 100%);
  }
 `
 
@@ -131,20 +129,11 @@ const Wrapper = styled.div`
      padding-left: 1rem;
 
     @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
-      font-size: 3rem;
+      font-size: clamp(2.25rem, 7vw, 3rem);
       line-height: 1.5rem;
       padding-top: .75rem;
-      letter-spacing: .75rem;
-      padding-left: .75rem;
-    }
-
-    @media screen and (max-width: ${({theme}) => theme.breakpoint.xs}){
-      font-size: 2.25rem;
-      line-height: 1.75rem;
-      padding-top: .5rem;
-      letter-spacing: .5rem;
-      padding-left: .5rem;
-      
+      letter-spacing: clamp(.5rem, 1.5vw, .75rem);
+      padding-left: clamp(.5rem, 1.5vw, .75rem);
     }
   }
 
@@ -185,6 +174,19 @@ const Wrapper = styled.div`
 
 `
 
+const SocialLinks = styled.span`
+  &&{
+    position: absolute;
+    bottom: 25px;
+    left: 50%;
+    transform: translateX(-50%);
+
+    @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+      bottom: calc(env(safe-area-inset-bottom, 20px) + 20px);
+    }
+  }
+`
+
 const Imgcarousel = styled.div`
   position: absolute;
   top: 0;
@@ -198,7 +200,7 @@ const CustomCarousel = styled(Carousel)`
   img{
     object-fit: cover;
     object-position: center;
-    height: 100dvh;
+    height: 100vh;
     
   }
 

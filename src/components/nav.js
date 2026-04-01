@@ -230,7 +230,7 @@ const MobileNav = styled.nav`
   left: ${({isOpen})=> isOpen ? '0%':'100%'};
   z-index: 4;
   width: 100%;
-  height: 100dvh;
+  height: 100vh;
   transition: all 400ms ease;
   background-color: rgba(0,0,0,.99);
   backdrop-filter: blur(10px);
@@ -335,11 +335,7 @@ const BtnWrap = styled.div`
        display: flex;
        align-items: center;
       justify-content: flex-start;
-      }
-
-
-     @media screen and (max-width: ${theme.breakpoint.xs}){
-       aspect-ratio:1;
+      aspect-ratio: 1;
       }
 
   
