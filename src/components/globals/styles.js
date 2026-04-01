@@ -65,7 +65,7 @@ export const Text = styled.p`
 
 export const SectionContainer = styled.section`
   width: 100%;
-  min-height: 100vh;
+  min-height: 100dvh;
   max-width: ${({theme,type}) => type ==='grid' ? 'auto' : theme.maxWidth};
   margin: 0 auto;
   

@@ -230,7 +230,7 @@ const MobileNav = styled.nav`
   left: ${({isOpen})=> isOpen ? '0%':'100%'};
   z-index: 4;
   width: 100%;
-  height: 100vh;
+  height: 100dvh;
   transition: all 400ms ease;
   background-color: rgba(0,0,0,.99);
   backdrop-filter: blur(10px);

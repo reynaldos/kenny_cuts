@@ -82,12 +82,12 @@ export default Landing
 
 const Container = styled.main`
   width: 100%;
-  height: calc(100vh - 75px);
+  height: calc(100dvh - 75px);
   /* background-color: rgba(255,0,0,.5); */
   position: relative;
 
    @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
-   height:100vh;
+   height:100dvh;
  }
 `
 
@@ -198,7 +198,7 @@ const CustomCarousel = styled(Carousel)`
   img{
     object-fit: cover;
     object-position: center;
-    height: 100vh;
+    height: 100dvh;
     
   }
 
