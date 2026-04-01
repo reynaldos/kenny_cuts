@@ -23,7 +23,7 @@ const serviceInfo = [
 
 const Services = () => {
   return (
-    <SectionContainer id='services'>
+    <ServicesSectionContainer id='services'>
        <Header>Services</Header>
 
       <Wrapper>
@@ -37,13 +37,19 @@ const Services = () => {
         })}
 
       </Wrapper>
-      </SectionContainer>
+      </ServicesSectionContainer>
   )
 }
 
 export default Services
 
 
+
+const ServicesSectionContainer = styled(SectionContainer)`
+  @media screen and (max-width: ${({theme}) => theme.breakpoint.md}){
+    padding-top: 80px;
+  }
+`
 
 const Wrapper = styled.div`
   width: 100%;

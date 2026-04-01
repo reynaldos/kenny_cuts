@@ -335,11 +335,7 @@ const BtnWrap = styled.div`
        display: flex;
        align-items: center;
       justify-content: flex-start;
-      }
-
-
-     @media screen and (max-width: ${theme.breakpoint.xs}){
-       aspect-ratio:1;
+      aspect-ratio: 1;
       }
 
   
